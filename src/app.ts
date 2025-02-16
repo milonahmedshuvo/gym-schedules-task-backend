@@ -6,6 +6,8 @@ import { TErrorSoursePattern } from './app/error/errortype'
 import handleMongooseError from './app/error/handleMongooseError'
 import handleZodError from './app/error/handleZodError'
 import { ZodError } from 'zod'
+import AppError from './app/error/appError'
+import { authRoutes } from './app/modules/authentication/auth.routes'
 const app = express()
 
 
@@ -15,6 +17,7 @@ app.use(cors())
 
 
 // application routes 
+app.use('/api/v1/auth', authRoutes)
 app.use('/api/v1/user', userRoutes)
 
 
@@ -41,6 +44,15 @@ app.use((err: any, req: Request, res:Response, next:NextFunction) => {
         statusCode = ZodError.statusCode
         message = ZodError.message
         error = ZodError.errorSourse
+      }else if(err instanceof AppError){
+        statusCode = err.statusCode
+        message = err.message
+        error = [
+          {
+            path: '',
+            message: err.message
+          }
+        ]
       }
 
 
@@ -54,6 +66,17 @@ app.use((err: any, req: Request, res:Response, next:NextFunction) => {
 })
 
 
+
+
+// Handle Not Found api 
+app.use((req:Request, res:Response, next:NextFunction) => {
+    
+    res.status(404).json({
+       success: false,
+       message: "Not Found API",
+       error: ""
+    })
+  })
 
 
 
