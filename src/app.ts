@@ -9,6 +9,7 @@ import { ZodError } from 'zod'
 import AppError from './app/error/appError'
 import { authRoutes } from './app/modules/authentication/auth.routes'
 import { scheduleRoutes } from './app/modules/schedule/schedule.routes'
+import { bookingRoutes } from './app/modules/schedule/booking/booking.routes'
 const app = express()
 
 
@@ -23,6 +24,7 @@ app.use('/api/v1/user', userRoutes)
 
 // working api runing...... 
 app.use('/api/v1/schedule', scheduleRoutes)
+app.use('/api/v1/booking', bookingRoutes)
 
 
 // global error handler 

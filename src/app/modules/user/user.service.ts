@@ -9,6 +9,7 @@ const createUserIntoDB = async (payload: TUser) => {
 
     const result = await User.create(payload)
     const jwtPayload = {
+        _id: result._id,
         name : payload.name,
         email : payload.email
     }
