@@ -28,8 +28,6 @@
 * get: http://localhost:5000/api/v1/user/trainer-profile (trainer Only)
 
 
-
-
-* Github link: 
-* Root live link : 
+* Github link: https://github.com/milonahmedshuvo/gym-schedules-task-backend
+* Root live link : https://gym-class-schedule-backend.vercel.app/
 

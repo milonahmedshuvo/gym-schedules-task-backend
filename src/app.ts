@@ -71,7 +71,9 @@ app.use((err: any, req: Request, res:Response, next:NextFunction) => {
     })
 })
 
-
+app.get('/', (req, res) => {
+  res.send('Gym schedule!')
+})
 
 
 // Handle Not Found api 
@@ -86,9 +88,7 @@ app.use((req:Request, res:Response, next:NextFunction) => {
 
 
 
-app.get('/', (req, res) => {
-  res.send('Gym schedule!')
-})
+
 
 
 
