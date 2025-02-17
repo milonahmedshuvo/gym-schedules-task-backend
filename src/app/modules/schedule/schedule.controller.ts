@@ -18,6 +18,28 @@ const createClassSchedule = async (req:Request, res:Response, next:NextFunction)
 }
 
 
+
+
+
+const getAllClassSchedule = async (req:Request, res:Response, next:NextFunction) => {
+    
+    try{
+        
+        const result = await scheduleServices.getAllScheduleFromDB()
+
+        res.status(200).json({
+            status: true,
+            message: 'Schedule retrive successfully!',
+            data: result
+        })
+    }catch(err){
+        next(err)
+    }
+}
+
+
+
 export const scheduleControllers = {
-    createClassSchedule
+    createClassSchedule,
+    getAllClassSchedule
 }

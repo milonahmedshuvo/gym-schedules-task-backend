@@ -28,6 +28,17 @@ const createClassScheduleIntoDB = async (trainerId:string, date:string, timeSlot
 
 
 
+
+const getAllScheduleFromDB = async () => {
+
+    const result = await ClassSchedule.find()
+
+    return {
+        result
+    }
+}
+
 export const scheduleServices = {
-    createClassScheduleIntoDB
+    createClassScheduleIntoDB,
+    getAllScheduleFromDB
 }
