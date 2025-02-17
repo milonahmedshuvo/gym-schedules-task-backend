@@ -5,8 +5,21 @@
 3. npm prod 
 
 <br/>
-<br/>
 
+### admin credentials
+* email : admin@gmail.com
+* password : 1234 
+
+### trainer credentials
+* email : trainer@gmail.com
+* password : 1234 
+
+### trainee credentials
+* email : trainee@gmail.com
+* password : 1234 
+
+
+<br/>
 
 ### All User Registetion : 
 * Post:  http://localhost:5000/api/v1/user/admin-register
