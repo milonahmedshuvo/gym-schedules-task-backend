@@ -26,7 +26,19 @@ const createUserIntoDB = async (payload: TUser) => {
 
 
 
+const traineeProfileFromDB = async (id:string) => {
+    const result = await User.findById(id)
+    return result
+}
+
+const trainerProfileFromDB = async (id:string) => {
+    const result = await User.findById(id)
+    return result
+
+}
 
 export const userServices = {
-    createUserIntoDB
+    createUserIntoDB,
+    traineeProfileFromDB,
+    trainerProfileFromDB
 }

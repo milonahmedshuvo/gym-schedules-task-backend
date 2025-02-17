@@ -23,7 +23,7 @@ const auth = (...requistUserRole:TUserRole[]) => {
        
        const { role } = decoded;
 
-       console.log({role})
+      
        
        
        // check role such user and admin 

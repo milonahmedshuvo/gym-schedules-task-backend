@@ -6,7 +6,7 @@ const bookClass = async (req:Request, res:Response, next:NextFunction) => {
         const { classSchedule } = req.body;
         const userId = req.user?._id;
 
-        console.log({userId})
+        
 
 
         const result = await bookingServices.bookClassFromDB(classSchedule, userId)

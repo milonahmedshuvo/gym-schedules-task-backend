@@ -19,6 +19,54 @@ const createUserAll = async (req: Request, res: Response, next:NextFunction) =>{
 }
 
 
+
+const traineeProfile = async (req: Request, res: Response, next:NextFunction) =>{
+   
+    try{
+        const userId = req.user?._id;
+        console.log({userId})
+    
+        const result = await userServices.traineeProfileFromDB(userId)
+        
+
+        res.status(200).json({
+            status: true,
+            message: 'Trainee profile retrive successfull!',
+            data: result
+        })
+
+    }catch(err){
+        next(err)
+    }
+}
+
+
+
+const trainerProfile = async (req: Request, res: Response, next:NextFunction) =>{
+   
+    try{
+        const userId = req.user?._id;
+        console.log({userId})
+    
+        const result = await userServices.trainerProfileFromDB(userId)
+        
+
+        res.status(200).json({
+            status: true,
+            message: 'Trainer profile retrive successfull!',
+            data: result
+        })
+
+    }catch(err){
+        next(err)
+    }
+}
+
+
+
+
 export const userControllers = {
-    createUserAll
+    createUserAll,
+    traineeProfile,
+    trainerProfile
 }
