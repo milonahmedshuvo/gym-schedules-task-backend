@@ -20,7 +20,11 @@ const UserSchema = new Schema<TUser>({
     enum : ['admin','trainer','trainee'],
     required : true
    }
-})
+},
+{
+   timestamps: true
+}
+)
 
 
 export const User = model<TUser>('User', UserSchema)

@@ -8,6 +8,7 @@ import handleZodError from './app/error/handleZodError'
 import { ZodError } from 'zod'
 import AppError from './app/error/appError'
 import { authRoutes } from './app/modules/authentication/auth.routes'
+import { scheduleRoutes } from './app/modules/schedule/schedule.routes'
 const app = express()
 
 
@@ -19,6 +20,9 @@ app.use(cors())
 // application routes 
 app.use('/api/v1/auth', authRoutes)
 app.use('/api/v1/user', userRoutes)
+
+// working api runing...... 
+app.use('/api/v1/schedule', scheduleRoutes)
 
 
 // global error handler 
